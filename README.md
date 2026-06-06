@@ -1,1 +1,0 @@
-# Tugas-Kelompok-Komputasi-Pararel-
