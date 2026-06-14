@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package hashcracker;
+
+service HashCracker {
+    rpc GetWork (WorkRequest) returns (WorkResponse);
+    rpc SubmitResult (ResultRequest) returns (ResultResponse);
+}
+
+message WorkRequest {
+    int32 worker_id = 1;
+}
+
+message WorkResponse {
+    repeated string words = 1;
+    int32 start_index = 2;
+}
+
+message ResultRequest {
+    int32 worker_id = 1;
+    string found_password = 2;
+    string target_hash = 3;
+}
+
+message ResultResponse {
+    bool success = 1;
+    string message = 2;
+}
